@@ -4,7 +4,6 @@
             <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
             <p>Title</p>
         </div>
-
         <div class="product-part">
             <p>squirrels</p>
             <p>fats</p>
@@ -13,65 +12,17 @@
         </div>
     </div>
 
-    <div class="product">
+    <div *ngFor="let product of products" class="product">
         <div class="product-part">
             <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
-            <p>Title</p>
+            <p>{{product.title}}</p>
         </div>
-
         <div class="product-part">
-            <p>squirrels</p>
-            <p>fats</p>
-            <p>carbohydrates</p>
-            <p>callories</p>
-        </div>
-    </div>    <div class="product">
-        <div class="product-part">
-            <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
-            <p>Title</p>
-        </div>
-
-        <div class="product-part">
-            <p>squirrels</p>
-            <p>fats</p>
-            <p>carbohydrates</p>
-            <p>callories</p>
-        </div>
-    </div>    <div class="product">
-        <div class="product-part">
-            <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
-            <p>Title</p>
-        </div>
-
-        <div class="product-part">
-            <p>squirrels</p>
-            <p>fats</p>
-            <p>carbohydrates</p>
-            <p>callories</p>
-        </div>
-    </div>    <div class="product">
-        <div class="product-part">
-            <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
-            <p>Title</p>
-        </div>
-
-        <div class="product-part">
-            <p>squirrels</p>
-            <p>fats</p>
-            <p>carbohydrates</p>
-            <p>callories</p>
-        </div>
-    </div>    <div class="product">
-        <div class="product-part">
-            <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
-            <p>Title</p>
-        </div>
-
-        <div class="product-part">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
+            <p>{{product.squirrels}}</p>
+            <p>{{product.fats}}</p>
+            <p>{{product.carbohydrates}}</p>
+            <p>{{product.callories}}</p>
         </div>
     </div>
+
 </section>
