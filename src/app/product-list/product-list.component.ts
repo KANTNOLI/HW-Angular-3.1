@@ -9,10 +9,38 @@ import RenderProductList from '../assets/renderProductList';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  products: Product[] = RenderProductList(5)
+  length: number = 5
+  products: Product[] = RenderProductList(this.length)
+  historyClick: number = -1
 
   filteringList(type: number) {
-    this.products.sort((a, b) => )
+    if (this.historyClick === type) {
+      this.products.reverse()
+    } else {
+      this.historyClick = type
+      switch (type) {
+        case 1:
+          this.products.sort((a, b) => a.squirrels - b.squirrels); break;
+        case 2:
+          this.products.sort((a, b) => a.fats - b.fats); break;
+        case 3:
+          this.products.sort((a, b) => a.carbohydrates - b.carbohydrates); break;
+        case 4:
+          this.products.sort((a, b) => a.callories - b.callories); break;
+        default:
+          this.products.sort()
+      }
+    }
+
+
+
+
+  }
+
+  reRenderProductList() {
+    this.length = this.length < 20 ? this.length : 20
+    
+    this.products = RenderProductList(this.length)
   }
 }
 
