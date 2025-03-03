@@ -10,8 +10,10 @@ import RenderProductList from '../assets/renderProductList';
 })
 export class ProductListComponent {
   length: number = 5
+  count: number = 1;
   products: Product[] = RenderProductList(this.length)
   historyClick: number = -1
+  chooseProduct: Product = this.products[0]
 
   filteringList(type: number) {
     if (this.historyClick === type) {
@@ -38,9 +40,13 @@ export class ProductListComponent {
   }
 
   reRenderProductList() {
-    this.length = this.length < 20 ? this.length : 20
-    
+    this.length = this.length < 20 && this.length > 0 ? this.length : 20
+
     this.products = RenderProductList(this.length)
+  }
+
+  setChooseProduct(productClick: Product) {
+    this.chooseProduct = productClick
   }
 }
 

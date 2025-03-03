@@ -2,6 +2,11 @@
     <!-- Filtering -->
     <div class="product">
         <div class="product-part">
+            {{chooseProduct | rndCalls: count}}
+        </div>
+    </div>
+    <div class="product">
+        <div class="product-part">
             <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
             <p (click)="filteringList(0)">Title</p>
         </div>
@@ -14,7 +19,7 @@
     </div>
 
     <!-- List -->
-    <div *ngFor="let product of products" class="product">
+    <div *ngFor="let product of products" (click)="setChooseProduct(product)" class="product">
         <div class="product-part">
             <img src="https://static.tildacdn.com/tild6439-6561-4330-b262-653263333332/kazan_category_outsi.jpg" alt="">
             <p>{{product.title}}</p>
@@ -33,8 +38,8 @@
         <p>Length {{length}}</p>
         <input type="number" [(ngModel)]="length" (keyup)="reRenderProductList()">
 
-        
-        <p>Count Product {{length}}</p>
-        <input type="number">
+
+        <p>Count Product {{count}}</p>
+        <input type="number" [(ngModel)]="count">
     </div>
 </section>
